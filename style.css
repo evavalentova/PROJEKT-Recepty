@@ -5,6 +5,9 @@ html { box-sizing: border-box; }
 body {
 	margin: 0;
 	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: white;
 }
 
 .paticka {
@@ -33,3 +36,132 @@ Nastav je receptům jako obrázky na pozadí (tj. nepřidávej je jako <img> do 
 Na rozložení prvků NEPOUŽÍVEJ absolutní pozicování, ale pouze flexboxy.
 Flexboxy mohou být vnořené do sebe, klidně několikrát.
 */
+
+.recipe-main {
+	background: url(images/salat.jpg) no-repeat center;
+	background-size: cover;
+	min-height: 200px;
+}
+
+.recipe.one {
+	background-image: url(images/chlebicek.jpg);
+}
+
+.recipe.two {
+	background-image: url(images/cizrna.jpg);
+}
+
+.recipe.three {
+	background-image: url(images/tacos.jpg);
+}
+
+.recipe.four {
+	background-image: url(images/burger.jpg);
+}
+
+.recipe {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 90px;
+	margin: 2px 0;
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	font-size: 28px;
+	margin: 0;
+}
+
+h2 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	font-size: 18px;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+.recipe-main,
+.recipe {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.text {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+@media screen and (min-width:480px) {
+	h1 {
+		font-size: 36px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.recipe-main {
+		padding: 20px;
+		min-height: 250px;
+		width: 100%;
+	}
+
+	.recipes{
+		width: calc(50% - 1px)
+	}
+
+	.recipe {
+		min-height: 150px;
+	}
+}
+
+@media screen and (min-width: 860px) {
+	h1 {
+		font-size: 48px;
+	}
+
+	h2 {
+		font-size: 28px;
+	}
+
+	.container {
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+
+	.recipe-main,
+	.recipes {
+		flex: 0 0 calc((100% - 4px) / 3);
+		min-height: 400px;
+
+	}
+
+	.recipe.one,
+	.recipe.three {
+		margin: 0;
+	}
+
+	.recipe.two,
+	.recipe.four {
+		margin-bottom: 0;
+	}
+
+	.recipe {
+		min-height: 200px;
+	}
+
+}
